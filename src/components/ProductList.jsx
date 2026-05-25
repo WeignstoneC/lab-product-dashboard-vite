@@ -1,13 +1,26 @@
 import React from 'react';
 import ProductCard from './ProductCard';
+import { Typography, Stack } from '@mui/material';
 
-const ProductList = ({ products }) => {
-  // TODO: Check if the product list is empty and display a message if needed
-
+const ProductList = ({ products, onRemove }) => {
   return (
-    <div>
-      {/* TODO: Iterate over the products array and render a ProductCard for each product */}
-    </div>
+    <>
+      {products.length > 0 ? (
+        <Stack spacing={2}>
+          {products.map((product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onRemove={() => onRemove(product.id)}
+            />
+          ))}
+        </Stack>
+      ) : (
+        <Typography variant="body1" color="text.secondary">
+          No products available for this filter.
+        </Typography>
+      )}
+    </>
   );
 };
 

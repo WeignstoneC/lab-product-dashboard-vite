@@ -1,3 +1,39 @@
-/* TODO: Style the product card container */
+.productCard {
+  padding: 16px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  border-radius: 12px;
+}
 
-/* TODO: Add special styling for out-of-stock products */
+.outOfStockClass {
+  background-color: #fff1f0;
+  border-color: #ff8a80;
+}
+
+:global(.outOfStockClass) {
+  background-color: #fff1f0;
+  border-color: #ff8a80;
+}
+
+.inStock {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.outOfStock {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+.removeButton {
+  padding: 8px 12px;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.removeButton:hover {
+  background-color: #1565c0;
+}
